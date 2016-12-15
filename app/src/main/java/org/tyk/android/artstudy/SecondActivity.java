@@ -92,13 +92,6 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        sixBtn = (Button) findViewById(R.id.six_btn);
-        sixBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SixActivity.class));
-            }
-        });
 
     }
 
