@@ -70,6 +70,6 @@ public class MyCircleImageView extends ImageView {
         //获取bitmap的宽高
         int dWidth = drawable.getIntrinsicWidth();
         int dHeight = drawable.getIntrinsicHeight();
-        Log.e("log", "宽" + dWidth + "高" + dHeight);
+
     }
 }
