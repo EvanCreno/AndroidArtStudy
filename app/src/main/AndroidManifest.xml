@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".FourActivity" />
         <activity android:name=".FiveActivity" />
-        <activity android:name=".ThirdActivity"></activity>
+        <activity android:name=".ThirdActivity" />
     </application>
 
 </manifest>

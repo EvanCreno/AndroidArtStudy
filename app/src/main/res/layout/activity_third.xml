@@ -8,24 +8,25 @@
     tools:context="org.tyk.android.artstudy.ThirdActivity">
 
 
-    <org.tyk.android.artstudy.MyCircleImageView
-        android:id="@+id/my_circle_img"
+    <ImageView
+        android:id="@+id/img"
         android:layout_width="100dp"
         android:layout_height="150dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
         android:src="@drawable/k" />
 
-
     <ImageView
-        android:id="@+id/second_img"
+        android:id="@+id/circle_img"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="10dp" />
+        android:layout_margin="10dp" />
+
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/change"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="缩放" />
+        android:layout_margin="10dp"
+        android:text="转换" />
 
 </LinearLayout>
