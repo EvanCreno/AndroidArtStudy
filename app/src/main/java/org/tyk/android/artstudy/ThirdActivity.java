@@ -5,8 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+import android.graphics.Path;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -45,16 +44,32 @@ public class ThirdActivity extends AppCompatActivity {
                 Bitmap newBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, false);
                 int width = newBitmap.getWidth();
                 int height = newBitmap.getHeight();
+
                 //圆形bitmap
                 Bitmap circleBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(circleBitmap);
                 Paint paint = new Paint();
                 paint.setAntiAlias(true);
                 paint.setColor(Color.BLACK);
-                canvas.drawCircle(width / 2, height / 2, width / 2, paint);
-                PorterDuffXfermode porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
-                paint.setXfermode(porterDuffXfermode);
+                /**第一种方式**/
+//                canvas.drawCircle(width / 2, height / 2, width / 2, paint);
+//                PorterDuffXfermode porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN);
+//                paint.setXfermode(porterDuffXfermode);
+//                canvas.drawBitmap(newBitmap, 0, 0, paint);
+                /**第二种方式**/
+//                BitmapShader bitmapShader = new BitmapShader(newBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+//                paint.setShader(bitmapShader);
+//                canvas.drawCircle(width / 2, height / 2, width / 2, paint);
+//                circleImg.setImageBitmap(circleBitmap);
+                /**第三种方式**/
+                Path path = new Path();
+                //按照顺时针方向添加一个圆
+                path.addCircle(width / 2, height / 2, width / 2, Path.Direction.CW);
+                canvas.save();
+                //设置为在圆形区域内绘制
+                canvas.clipPath(path);
                 canvas.drawBitmap(newBitmap, 0, 0, paint);
+                canvas.restore();
                 circleImg.setImageBitmap(circleBitmap);
             }
         });
