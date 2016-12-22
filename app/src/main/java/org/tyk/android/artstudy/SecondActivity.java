@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SecondActivity extends AppCompatActivity {
 
 
-    private Button testBtn, fourBtn, fiveBtn, thirdBtn;
+    private Button testBtn, fourBtn, fiveBtn, thirdBtn,sixBtn;
     private TextView textView;
 
     @Override
@@ -99,6 +99,13 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
+        sixBtn = (Button) findViewById(R.id.six_btn);
+        sixBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SixActivity.class));
+            }
+        });
 
     }
 

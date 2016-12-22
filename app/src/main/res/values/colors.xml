@@ -23,4 +23,5 @@
     <color name="text_color">#43BBE7</color>
     <color name="left">#fc6a7b</color>
     <color name="right">#2aad95</color>
+    <color name="white_two">#ddd</color>
 </resources>
