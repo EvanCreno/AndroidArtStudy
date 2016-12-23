@@ -1,35 +1,48 @@
 package org.tyk.android.artstudy;
 
 import android.content.Context;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 /**
  * Created by tangyangkai on 2016/12/21.
  */
 
-public class FollowBehavior extends CoordinatorLayout.Behavior<TextView> {
+public class FollowBehavior extends CoordinatorLayout.Behavior<ImageView> {
+
+    private int width, height, top, left;
 
     public FollowBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    //当dependency是Button类的实例时返回true，
-    //就可以让系统知道布局文件中的Button就是本次交互行为中的dependent view
     @Override
-    public boolean layoutDependsOn(CoordinatorLayout parent, TextView child, View dependency) {
-        return dependency instanceof Button;
+    public boolean layoutDependsOn(CoordinatorLayout parent, ImageView child, View dependency) {
+        return dependency instanceof AppBarLayout;
     }
 
-
     @Override
-    public boolean onDependentViewChanged(CoordinatorLayout parent, TextView child, View dependency) {
+    public boolean onDependentViewChanged(CoordinatorLayout parent, ImageView child, View dependency) {
 
-        child.setX(dependency.getX() + 200);
-        child.setY(dependency.getY() + 200);
+
+        if (dependency.getY() == 0) {
+            width = child.getWidth();
+            height = child.getHeight();
+            top = child.getTop();
+            left = child.getLeft();
+        }
+        float percent = Math.abs(dependency.getY()) / SixActivity.scrollRange;
+        float yPercent = (float) (percent * 0.85);
+        child.setY(top * (1 - yPercent));
+        child.setX(left + 300 * percent);
+        CoordinatorLayout.LayoutParams layoutParams =
+                (CoordinatorLayout.LayoutParams) child.getLayoutParams();
+        layoutParams.width = (int) (width * (1 - percent * 3 / 4));
+        layoutParams.height = (int) (height * (1 - percent * 3 / 4));
+        child.setLayoutParams(layoutParams);
         return true;
     }
 }
