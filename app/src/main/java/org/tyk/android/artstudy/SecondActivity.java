@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SecondActivity extends AppCompatActivity {
 
 
-    private Button testBtn, fourBtn, fiveBtn, thirdBtn,sixBtn;
+    private Button testBtn, fourBtn, fiveBtn, thirdBtn, sixBtn;
     private TextView textView;
 
     @Override
@@ -106,6 +106,7 @@ public class SecondActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), SixActivity.class));
             }
         });
+
 
     }
 
