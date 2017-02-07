@@ -1,5 +1,7 @@
 package org.tyk.android.artstudy;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
@@ -31,6 +33,7 @@ public class FiveActivity extends AppCompatActivity implements MySelectView.getN
         mySelectView.setmStartWidth(0);
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void init() {
 
         stringList.add("数据库");

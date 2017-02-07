@@ -33,7 +33,7 @@
         android:layout_height="match_parent">
 
 
-        <org.tyk.android.artstudy.MyScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -283,6 +283,6 @@
                 </RelativeLayout>
 
             </LinearLayout>
-        </org.tyk.android.artstudy.MyScrollView>
+        </ScrollView>
     </org.tyk.android.artstudy.MyParentView>
 </LinearLayout>

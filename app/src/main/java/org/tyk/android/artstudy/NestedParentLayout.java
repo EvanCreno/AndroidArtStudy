@@ -94,6 +94,7 @@ public class NestedParentLayout extends FrameLayout implements NestedScrollingPa
 
         //向右滑动
         if (dx > 0) {
+            //滑动到边界
             if (target.getRight() + dx > getWidth()) {
                 dx = target.getRight() + dx - getWidth();
                 //父View消耗
@@ -114,6 +115,7 @@ public class NestedParentLayout extends FrameLayout implements NestedScrollingPa
         if (dy > 0) {
             if (target.getBottom() + dy > getHeight()) {
                 dy = target.getBottom() + dy - getHeight();
+                //父View消耗
                 offsetTopAndBottom(dy);
                 consumed[1] += dy;
             }
@@ -122,6 +124,7 @@ public class NestedParentLayout extends FrameLayout implements NestedScrollingPa
         else {
             if (target.getTop() + dy < 0) {
                 dy = dy + target.getTop();
+                //父View消耗
                 offsetTopAndBottom(dy);
                 consumed[1] += dy;
             }
