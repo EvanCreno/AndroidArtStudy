@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class SecondActivity extends AppCompatActivity {
 
 
-    private Button testBtn, fourBtn, fiveBtn, thirdBtn, sixBtn;
+    private Button testBtn, fourBtn, fiveBtn, thirdBtn, sixBtn, sevenBtn;
     private TextView textView;
 
     @Override
@@ -107,7 +107,13 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-
+        sevenBtn = (Button) findViewById(R.id.seven_btn);
+        sevenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SevenActivity.class));
+            }
+        });
     }
 
 

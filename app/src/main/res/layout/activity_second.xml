@@ -35,32 +35,37 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:text="移动按钮" />
+                android:text="文字移动" />
 
 
             <Button
                 android:id="@+id/third_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="跳转3按钮" />
+                android:text="圆形图片" />
 
             <Button
                 android:id="@+id/four_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="跳转4按钮" />
+                android:text="滑动冲突" />
 
             <Button
                 android:id="@+id/five_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="跳转5按钮" />
+                android:text="自定义View与ViewGroup" />
 
             <Button
                 android:id="@+id/six_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="跳转6按钮" />
+                android:text="协调布局" />
+            <Button
+                android:id="@+id/seven_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="嵌套滑动" />
 
         </LinearLayout>
     </ScrollView>
